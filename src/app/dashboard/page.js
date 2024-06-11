@@ -18,7 +18,7 @@ const Dashboard = () => {
         const token = localStorage.getItem("token");
         if (token) {
           const userRes = await axios.get(
-            "https://textauthapi-1.onrender.com/api/auth/me",
+            "http://localhost:5000/api/auth/me",
             {
               headers: {
                 "x-auth-token": token,
@@ -28,7 +28,7 @@ const Dashboard = () => {
           setUser(userRes.data);
 
           const textsRes = await axios.get(
-            "https://textauthapi-1.onrender.com/api/texts",
+            "http://localhost:5000/api/texts",
             {
               headers: {
                 "x-auth-token": token,
@@ -57,7 +57,7 @@ const Dashboard = () => {
     try {
       const token = localStorage.getItem("token");
       const res = await axios.post(
-        "https://textauthapi-1.onrender.com/api/hotels",
+        "http://localhost:5000/api/hotels",
         { nameHotel: nameHotel, email: email, address: address },
         {
           headers: {
@@ -77,7 +77,7 @@ const Dashboard = () => {
   const handleDeleteText = async (id) => {
     try {
       const token = localStorage.getItem("token");
-      await axios.delete(`https://textauthapi-1.onrender.com/api/texts/${id}`, {
+      await axios.delete(`http://localhost:5000/api/texts/${id}`, {
         headers: {
           "x-auth-token": token,
         },

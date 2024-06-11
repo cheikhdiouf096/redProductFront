@@ -103,7 +103,7 @@ const Hotel = () => {
 
       if (token) {
         const response = await axios.get(
-          "https://textauthapi-1.onrender.com/api/hotels",
+          "http://localhost:5000/api/hotels",
           {
             headers: {
               "x-auth-token": token,
@@ -129,7 +129,7 @@ const Hotel = () => {
     try {
       const token = localStorage.getItem("token");
       await axios.delete(
-        `https://textauthapi-1.onrender.com/api/hotels/${id}`,
+        `http://localhost:5000/api/hotels/${id}`,
         {
           headers: {
             "x-auth-token": token,

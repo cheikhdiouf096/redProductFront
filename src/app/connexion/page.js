@@ -47,7 +47,7 @@ const Connexion = () => {
     e.preventDefault();
     try {
       const res = await axios.post(
-        "https://textauthapi-1.onrender.com/api/auth/login",
+        "http://localhost:5000/api/auth/login",
         {
           email: values.email,
           password: values.password,
